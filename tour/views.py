@@ -10,7 +10,8 @@ class MainView(View):
         random_tour = {}
 
         for i in range(6):
-            random_tour[i] = tours[randint(1,16)]
+            rand_id = randint(1,16)
+            random_tour[rand_id] = tours[rand_id]
 
         context["tours"] = random_tour
 

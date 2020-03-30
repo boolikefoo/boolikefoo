@@ -14,15 +14,15 @@
     <div class="row mt-5" data-test="cards">
     
 
-      {% for tour in tours.values %}
+      {% for id, tour in tours.items %}
           
           <div class="col-4" data-test="card">
               <div class="card mb-3" >
               <img src="{{ tour.picture }}" class="rounded" data-test="picture" style="object-fit: cover; max-height:230px; ">
               <div class="card-body">
                 <h5 class="card-title">{{ tour.title }}</h5>
-              <p class="card-text" style="height:185px;">{{ tour.description|truncatewords:30 }} {{ value }}</p>
-                  <a href="departure/{{ tour.departure }}" class="btn btn-sm btn-primary" data-test="tourlink">Подробнее</a>
+              <p class="card-text" style="height:185px;">{{ tour.description|truncatewords:30 }}</p>
+                  <a href="{% url 'tour_url' id %}" class="btn btn-sm btn-primary" data-test="tourlink">Подробнее</a>
               </div>
               </div>
           </div>
