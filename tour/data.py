@@ -182,14 +182,3 @@ tours = {
      }
 
 }
-
-
-depart = {}
-departure = "spb"
-
-for key, value in tours.items():
-    print(key, value)
-    #if tour[departure] == departure:
-        
-
-#context["tours"] = depart

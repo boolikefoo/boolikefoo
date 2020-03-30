@@ -18,7 +18,7 @@ from django.urls import path
 from tour.views import MainView, DepartureView, TourView
 urlpatterns = [
     path('', MainView.as_view(), name="main_url"),
-    path('departure/<str:departure>', DepartureView.as_view(), name="departure_url"),
+    path('departure/<str:departure>/', DepartureView.as_view(), name="departure_url"),
     path('tour/<int:id>/', TourView.as_view(), name="tour_url"),
 
 
