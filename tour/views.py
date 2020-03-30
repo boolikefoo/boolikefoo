@@ -11,8 +11,7 @@ class MainView(View):
         index_list = sample(range(1,16), 6)
 
         for i in index_list:            
-            random_tour.update( { i : tours[i]} )
-            
+            random_tour.update( { i : tours[i]} )            
 
         context["tours"] = random_tour
 
