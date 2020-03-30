@@ -1,4 +1,4 @@
-from random import randint
+from random import sample
 from django.shortcuts import render
 from django.views import View
 from tour.data import title, subtitle, description, departures, tours
@@ -8,10 +8,11 @@ context = { "title" : title, "subtitle" : subtitle, "description" : description,
 class MainView(View):
     def get(self, request, *args, **kwargs):
         random_tour = {}
+        index_list = sample(range(1,16), 6)
 
-        for i in range(6):
-            rand_id = randint(1,16)
-            random_tour[rand_id] = tours[rand_id]
+        for i in index_list:            
+            random_tour.update( { i : tours[i]} )
+            
 
         context["tours"] = random_tour
 
