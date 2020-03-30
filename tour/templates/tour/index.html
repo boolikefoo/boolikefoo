@@ -15,21 +15,17 @@
     
 
       {% for tour in tours.values %}
-
-        {% if forloop.counter <= 6 %}
           
           <div class="col-4" data-test="card">
               <div class="card mb-3" >
-              <img src="{{ tour.picture }}" class="card-img-top img-fluid" data-test="picture" style="height: 230px !important;">
+              <img src="{{ tour.picture }}" class="rounded" data-test="picture" style="object-fit: cover; max-height:230px; ">
               <div class="card-body">
                 <h5 class="card-title">{{ tour.title }}</h5>
-              <p class="card-text">{{ tour.description }} {{ value }}</p>
+              <p class="card-text" style="min-height:185px;">{{ tour.description|truncatewords:30 }} {{ value }}</p>
                   <a href="departure/{{ tour.departure }}" class="btn btn-sm btn-primary" data-test="tourlink">Подробнее</a>
               </div>
               </div>
           </div>
-
-        {% endif %}
 
       {% endfor %}
     </div>
