@@ -8,7 +8,8 @@ context = { "title" : title, "subtitle" : subtitle, "description" : description,
 class MainView(View):
     def get(self, request, *args, **kwargs):
         random_tour = {}
-        index_list = sample(range(1,16), 6)
+
+        index_list = sample(range(1, len(tours)), 6)
 
         for i in index_list:            
             random_tour.update( { i : tours[i]} )            
